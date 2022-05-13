@@ -1,9 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyPage</title>
+    <meta charset="UTF-8" />
+    <title>TodoList</title>
+    <link href="main.css" rel="stylesheet">
   </head>
   <body>
-    Welcome MyPage !
+    <div class="standard-theme"></div>
+    <div id="title">
+      <h1>Todo list</h1>
+    </div>
+    <div id="input">
+      <form>
+          <input class="input-box" type="text">
+          <button class="button" type="submit">Enter</button>
+      </form>
+    </div>
+    <!--
+    <div id="list">
+      <button class="button">Enter</button>
+    </div>
+  -->
+
+    <div id="list">
+      <ul class="todo-list">
+        <div class="inline">
+        <input class="checkbox" type="checkbox">
+        <label class="todo__title" >Default</label>
+        <button class="deletebtn"></button>
+        </div>
+          <!-- (Basic Format)
+          <div class="todo">
+              items added to this list:
+              <li></li>
+              <button>delete</button>
+              <button>check</button>
+          </div> -->
+      </ul>
+    </div>
+
+    <script src="main.js" type="text/javascript"> </script>
   </body>
 </html>

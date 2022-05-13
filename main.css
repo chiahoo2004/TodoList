@@ -1,0 +1,27 @@
+/*
+body {
+    background-color: lightblue;
+    opacity: 0.2;
+}
+*/
+
+#title {
+    color: black;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#input {
+    color: black;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#list {
+    color: black;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
