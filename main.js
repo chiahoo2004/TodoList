@@ -6,7 +6,9 @@ Btn.addEventListener('click', add);
 TodoList.addEventListener('click', del);
 TodoList.addEventListener('click', finish);
 
-function add() {
+function add(e) {
+
+    e.preventDefault();
     if (InBox.value.length === 0)
         return;
     const newDiv = document.createElement('div');
@@ -16,12 +18,14 @@ function add() {
         <div>
         <input class="checkbox" type="checkbox">
         <label class="todo__title" />${InBox.value}</label>
-        <button class="deletebtn"></button>
+        <button class="deletebtn">delete</button>
         </div>
     `
 
     newDiv.classList.add('todo');
     TodoList.appendChild(newDiv);
+
+    savelocal(InBox.value);
 }
 
 function del(event){
@@ -36,4 +40,18 @@ function finish(event){
     if(target.classList[0] === 'checkbox') {
         target.parentNode.classList.toggle("done");
     }
+}
+
+function savelocal(todo){
+    //Check: if item/s are there;
+    let todos;
+    if(localStorage.getItem('todos') === null) {
+        todos = [];
+    }
+    else {
+        todos = JSON.parse(localStorage.getItem('todos'));
+    }
+
+    todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
